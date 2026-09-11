@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ — Food Construct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunch.css">
+    <link rel="stylesheet" href="order.css">
+    <script src="config.js" defer></script>
+    <script src="api.js" defer></script>
+    <script src="storage.js" defer></script>
+    <script src="order.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Food Construct</h1>
+        <nav class="main-nav" aria-label="Основная навигация">
+            <a href="index.html">О нас</a>
+            <a href="lunch.html">Собрать ланч</a>
+            <a id="active" href="order.html">Оформить заказ</a>
+            <a href="orders.html">Заказы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="order-page-main">
+        <section class="composition-section" aria-labelledby="composition-title">
+            <h2 id="composition-title">Состав заказа</h2>
+            <p id="order-empty-message" class="order-empty-message" hidden>
+                Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу
+                <a href="lunch.html">Собрать ланч</a>.
+            </p>
+            <div id="order-composition-grid" class="dishes-grid order-composition-grid"></div>
+        </section>
+
+        <section class="checkout-form-section" aria-labelledby="checkout-title">
+            <h2 id="checkout-title">Оформление заказа</h2>
+
+            <form id="order-form" class="order-form">
+                <div class="order-column">
+                    <h3>Ваш заказ</h3>
+
+                    <div class="order-details">
+                        <div class="order-item">
+                            <h4>Суп</h4>
+                            <p data-summary-category="soup">Не выбран</p>
+                        </div>
+                        <div class="order-item">
+                            <h4>Главное блюдо</h4>
+                            <p data-summary-category="main-course">Не выбрано</p>
+                        </div>
+                        <div class="order-item">
+                            <h4>Салат/стартер</h4>
+                            <p data-summary-category="salad">Не выбран</p>
+                        </div>
+                        <div class="order-item">
+                            <h4>Напиток</h4>
+                            <p data-summary-category="drink">Не выбран</p>
+                        </div>
+                        <div class="order-item">
+                            <h4>Десерт</h4>
+                            <p data-summary-category="dessert">Не выбран</p>
+                        </div>
+                        <div class="order-total">
+                            <h4>Стоимость заказа</h4>
+                            <p id="order-total-price">0 ₽</p>
+                        </div>
+                    </div>
+
+                    <div class="form-field order-comment">
+                        <label for="comment">Комментарий к заказу</label>
+                        <textarea id="comment" name="comment" rows="6"></textarea>
+                    </div>
+                </div>
+
+                <div class="client-column">
+                    <h3>Ваши данные</h3>
+
+                    <div class="form-field">
+                        <label for="client-name">Имя</label>
+                        <input id="client-name" name="full_name" type="text" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+
+                    <div class="checkbox-field">
+                        <input id="subscribe" name="subscribe" type="checkbox" value="1" checked>
+                        <label for="subscribe">Получать информацию о скидках и акциях</label>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">Номер телефона</label>
+                        <input id="phone" name="phone" type="tel" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="address">Адрес доставки</label>
+                        <input id="address" name="delivery_address" type="text" required>
+                        <p class="field-note">Доставка осуществляется только по Москве</p>
+                    </div>
+
+                    <fieldset class="delivery-fieldset">
+                        <legend>Время доставки:</legend>
+                        <div class="radio-field">
+                            <input id="delivery-fast" name="delivery_type" type="radio" value="now" required>
+                            <label for="delivery-fast">Как можно скорее</label>
+                        </div>
+                        <div class="radio-field">
+                            <input id="delivery-time-choice" name="delivery_type" type="radio" value="by_time">
+                            <label for="delivery-time-choice">К указанному времени</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-field">
+                        <label for="delivery-time">Укажите время доставки</label>
+                        <input id="delivery-time" name="delivery_time" type="time" min="07:00" max="23:00" step="300">
+                        <p class="field-note">Доступное время доставки с 7:00 до 23:00</p>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset">Сбросить</button>
+                        <button type="submit">Отправить</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="contacts">
+        <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+    </footer>
+</body>
+</html>
