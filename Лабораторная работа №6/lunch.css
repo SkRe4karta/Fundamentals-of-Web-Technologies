@@ -1,0 +1,490 @@
+.lunch-main {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 6% 80px;
+}
+
+.menu-section {
+    margin-bottom: 55px;
+}
+
+.menu-section h2 {
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin: 0 0 28px;
+}
+
+.filter-button {
+    padding: 7px 11px;
+    border: 0;
+    border-radius: 12px;
+    background: transparent;
+    color: #008000;
+    font: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+    background-color: rgba(0, 128, 0, 0.08);
+    outline: none;
+}
+
+.filter-button.active {
+    background-color: rgba(0, 128, 0, 0.16);
+}
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dish-card {
+    min-width: 0;
+    height: 100%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    transition: border-color 0.2s ease;
+}
+
+.dish-card:hover,
+.dish-card:focus-within,
+.dish-card.selected {
+    border-color: #008000;
+}
+
+.dish-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.dish-price {
+    margin: 22px 0 7px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.dish-name {
+    margin: 0 0 12px;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.dish-weight {
+    margin: auto 0 0;
+    padding-top: 8px;
+    color: #777;
+    font-size: 17px;
+}
+
+.dish-button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #f1eee9;
+    color: #111;
+    font-family: "Roboto", sans-serif;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dish-card:hover .dish-button,
+.dish-card:focus-within .dish-button,
+.dish-card.selected .dish-button {
+    background-color: #008000;
+    color: white;
+}
+
+.order-section {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 6% 75px;
+}
+
+.order-section > h2 {
+    margin: 0 0 42px;
+    text-align: center;
+    font-size: 34px;
+}
+
+.order-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 120px;
+    align-items: start;
+}
+
+.order-form h3 {
+    margin: 0 0 28px;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.order-column,
+.client-column {
+    min-width: 0;
+}
+
+.nothing-selected {
+    margin: 0 0 34px;
+    font-size: 18px;
+}
+
+.order-details {
+    margin-bottom: 32px;
+}
+
+.order-item,
+.order-total {
+    margin-bottom: 28px;
+}
+
+.order-item h4,
+.order-total h4 {
+    margin: 0 0 4px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.order-item p,
+.order-total p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.order-total {
+    margin-top: 36px;
+}
+
+.order-total p {
+    font-size: 26px;
+}
+
+.order-comment {
+    margin-top: 8px;
+}
+
+.form-field {
+    margin-bottom: 24px;
+}
+
+.form-field label,
+.delivery-fieldset legend {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 10px;
+    border: 1px solid #777;
+    border-radius: 0;
+    background-color: white;
+    color: #111;
+    font: inherit;
+    font-size: 16px;
+}
+
+.form-field textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.checkbox-field,
+.radio-field {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.checkbox-field {
+    margin: -4px 0 24px;
+}
+
+.checkbox-field input,
+.radio-field input {
+    margin: 0;
+}
+
+.checkbox-field label,
+.radio-field label {
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.delivery-fieldset {
+    margin: 0 0 22px;
+    padding: 0;
+    border: 0;
+}
+
+.delivery-fieldset legend {
+    padding: 0;
+}
+
+.radio-field + .radio-field {
+    margin-top: 9px;
+}
+
+.field-note {
+    margin: 7px 0 0;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.form-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    min-height: 40px;
+    padding: 8px 18px;
+    border: 1px solid #333;
+    background-color: white;
+    color: #111;
+    font: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-actions button:hover {
+    background-color: #f1eee9;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .order-form {
+        gap: 55px;
+    }
+}
+
+@media (max-width: 700px) {
+    .order-form {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .order-section {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .lunch-main,
+    .order-section {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .menu-section h2 {
+        text-align: center;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dish-card {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .order-section > h2 {
+        font-size: 30px;
+    }
+}
+
+/* ЛР №6: доступные комбинации ланчей */
+.combo-section {
+    margin: 0 0 70px;
+}
+
+.combo-section > h2 {
+    margin: 0 0 34px;
+    text-align: center;
+}
+
+.combo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 44px 28px;
+    align-items: center;
+}
+
+.combo-card {
+    min-width: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 18px;
+}
+
+.combo-dish {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.combo-dish img {
+    width: auto;
+    height: 76px;
+    max-width: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    transition: transform 0.2s ease;
+}
+
+.combo-dish img:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.combo-dish span {
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.combo-dish small {
+    display: block;
+    margin-top: 4px;
+    font-size: calc(16px - 2pt);
+    font-style: italic;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+/* ЛР №6: динамическое уведомление */
+.order-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    width: min(620px, calc(100vw - 32px));
+    min-height: 250px;
+    padding: 58px 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+    transform: translate(-50%, -50%);
+    border: 2px solid #111;
+    background: #fff;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
+}
+
+.order-notification p {
+    max-width: 500px;
+    margin: 0;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.order-notification button {
+    min-width: 165px;
+    padding: 12px 30px;
+    border: 2px solid #111;
+    border-radius: 18px;
+    background: #fff;
+    color: #111;
+    font: inherit;
+    font-size: 19px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.order-notification button:hover,
+.order-notification button:focus-visible {
+    background-color: #008000;
+    color: #fff;
+    outline: none;
+}
+
+@media (max-width: 1000px) {
+    .combo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .combo-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .combo-card {
+        gap: 13px;
+    }
+
+    .combo-dish img {
+        height: 68px;
+    }
+
+    .combo-dish span {
+        font-size: 15px;
+    }
+
+    .combo-dish small {
+        font-size: calc(15px - 2pt);
+        white-space: normal;
+    }
+
+    .order-notification {
+        min-height: 220px;
+        padding: 42px 24px 26px;
+        gap: 32px;
+    }
+
+    .order-notification p {
+        font-size: 20px;
+    }
+}
