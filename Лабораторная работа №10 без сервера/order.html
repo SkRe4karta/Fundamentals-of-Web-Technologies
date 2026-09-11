@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Оформить заказ — Food Construct</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="lunch.css" rel="stylesheet"/>
+<link href="order.css" rel="stylesheet"/>
+<script defer="" src="config.js"></script>
+<script defer="" src="fallback-dishes.js"></script>
+<script defer="" src="api.js"></script>
+<script defer="" src="storage.js"></script>
+<script defer="" src="order.js"></script>
+</head>
+<body>
+<header class="site-header">
+<h1>Food Construct</h1>
+<nav aria-label="Основная навигация" class="main-nav">
+<a href="landing.html">Лендинг</a><a href="index.html">О нас</a>
+<a href="lunch.html">Собрать ланч</a>
+<a href="order.html" id="active">Оформить заказ</a>
+<a href="orders.html">Заказы</a>
+<a href="#contacts">Контакты</a>
+</nav>
+</header>
+<main class="order-page-main">
+<section aria-labelledby="composition-title" class="composition-section">
+<h2 id="composition-title">Состав заказа</h2>
+<p class="order-empty-message" hidden="" id="order-empty-message">
+                Ничего не выбрано. Чтобы добавить блюда в заказ, перейдите на страницу
+                <a href="lunch.html">Собрать ланч</a>.
+            </p>
+<div class="dishes-grid order-composition-grid" id="order-composition-grid"></div>
+</section>
+<section aria-labelledby="checkout-title" class="checkout-form-section">
+<h2 id="checkout-title">Оформление заказа</h2>
+<form class="order-form" id="order-form">
+<div class="order-column">
+<h3>Ваш заказ</h3>
+<div class="order-details">
+<div class="order-item">
+<h4>Суп</h4>
+<p data-summary-category="soup">Не выбран</p>
+</div>
+<div class="order-item">
+<h4>Главное блюдо</h4>
+<p data-summary-category="main-course">Не выбрано</p>
+</div>
+<div class="order-item">
+<h4>Салат/стартер</h4>
+<p data-summary-category="salad">Не выбран</p>
+</div>
+<div class="order-item">
+<h4>Напиток</h4>
+<p data-summary-category="drink">Не выбран</p>
+</div>
+<div class="order-item">
+<h4>Десерт</h4>
+<p data-summary-category="dessert">Не выбран</p>
+</div>
+<div class="order-total">
+<h4>Стоимость заказа</h4>
+<p id="order-total-price">0 ₽</p>
+</div>
+</div>
+<div class="form-field order-comment">
+<label for="comment">Комментарий к заказу</label>
+<textarea id="comment" name="comment" rows="6"></textarea>
+</div>
+</div>
+<div class="client-column">
+<h3>Ваши данные</h3>
+<div class="form-field">
+<label for="client-name">Имя</label>
+<input id="client-name" name="full_name" required="" type="text"/>
+</div>
+<div class="form-field">
+<label for="email">Email</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="checkbox-field">
+<input checked="" id="subscribe" name="subscribe" type="checkbox" value="1"/>
+<label for="subscribe">Получать информацию о скидках и акциях</label>
+</div>
+<div class="form-field">
+<label for="phone">Номер телефона</label>
+<input id="phone" name="phone" required="" type="tel"/>
+</div>
+<div class="form-field">
+<label for="address">Адрес доставки</label>
+<input id="address" name="delivery_address" required="" type="text"/>
+<p class="field-note">Доставка осуществляется только по Москве</p>
+</div>
+<fieldset class="delivery-fieldset">
+<legend>Время доставки:</legend>
+<div class="radio-field">
+<input id="delivery-fast" name="delivery_type" required="" type="radio" value="now"/>
+<label for="delivery-fast">Как можно скорее</label>
+</div>
+<div class="radio-field">
+<input id="delivery-time-choice" name="delivery_type" type="radio" value="by_time"/>
+<label for="delivery-time-choice">К указанному времени</label>
+</div>
+</fieldset>
+<div class="form-field">
+<label for="delivery-time">Укажите время доставки</label>
+<input id="delivery-time" max="23:00" min="07:00" name="delivery_time" step="300" type="time"/>
+<p class="field-note">Доступное время доставки с 7:00 до 23:00</p>
+</div>
+<div class="form-actions">
+<button type="reset">Сбросить</button>
+<button type="submit">Отправить</button>
+</div>
+</div>
+</form>
+</section>
+</main>
+<footer id="contacts">
+<p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+</footer>
+</body>
+</html>
